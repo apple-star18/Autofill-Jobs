@@ -1,0 +1,1099 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+  overscroll-behavior: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+  border:0;
+  background-color: rgb(237, 239, 237);
+}
+html.popupDocument,
+html.popupDocument body,
+html.popupDocument #app {
+  width: 400px;
+  min-width: 400px;
+  min-height: 0;
+  overflow: hidden;
+  background-color: rgb(246, 247, 244);
+}
+
+#app {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: rgb(246, 247, 244);
+  display: flex;
+  flex-direction: column;
+  --c1 : rgb(34, 59, 44);
+  --c2 : rgb(182, 88, 87);
+  --surface : rgb(255, 255, 252);
+  --line : rgba(20, 35, 28, 0.12);
+  --muted : rgba(20, 35, 28, 0.62);
+  font-family: "Lexend";
+  font-weight: 100;
+}
+.popupShell {
+  width: 400px;
+  min-height: 260px;
+  box-sizing: border-box;
+}
+.appShell {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+.aRight {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: end;
+}
+.aSelfTop {
+  align-self: flex-start;
+}
+.gS {
+  gap:0.25rem;
+}
+.gM {
+  gap:0.5rem;
+}
+.mTs {
+  margin-top: 0.5rem;
+}
+.pageKicker {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.15rem;
+}
+.explanationBg{
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  backdrop-filter: blur(15px);
+  background-color: rgba(240, 233, 220, 0.9);
+  gap: 1rem;
+}
+.explanation{
+  font-family: "Lexend";
+  font-weight: 300;
+  font-size: 1.5rem;
+  max-width: 70%;
+  text-align: center;
+}
+.inputFieldDiv {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.75rem;
+}
+.gridFieldDivHolder {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.gridFieldDiv{
+  display: flex; 
+  gap: 0.5rem;
+  width: 15rem;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 0.12rem solid var(--line);
+  outline: 0;
+  font-family: "Lexend";
+  padding:0.5rem;
+  padding-bottom: 1rem;
+  margin:0;
+  height:fit-content;
+  text-overflow: ellipsis;
+  max-width: 15rem;
+  color:var(--c1);
+  caret-shape: block; caret-color: var(--c1);
+}
+.gridDataItem{
+  flex: 0 0 auto;
+  background-color: var(--c1);
+  color: rgb(233, 233, 233);
+  font-size: 1rem;
+  width: fit-content;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.gridDataItem svg{
+  flex-shrink: 0;
+}
+.gridDataItem h1{
+  font-size: 1rem;
+  font-family: "Lexend";
+  font-weight: 300;
+}
+.textAreaDiv {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.textAreaDiv :nth-child(2) {
+  width: 18rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 0.12rem solid var(--line);
+  outline: 0;
+  font-family: "Lexend";
+  padding:0.5rem;
+  margin:0;
+  overflow-y: scroll;
+  text-wrap: wrap;
+  max-width: 20rem;
+  height: 5rem;
+  max-height: 15rem;
+  color:var(--c1);
+  caret-shape: block; caret-color: var(--c1);
+}
+.inputFieldDiv :nth-child(2) {
+  width: 15rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 0.12rem solid var(--line);
+  outline: 0;
+  font-family: "Lexend";
+  padding:0.5rem;
+  margin:0;
+  height:fit-content;
+  text-overflow: ellipsis;
+  max-width: 15rem;
+  color:var(--c1);
+  caret-shape: block; caret-color: var(--c1);
+}
+select.password {
+  color:transparent !important;
+  background-image: radial-gradient(var(--c1) 60%, transparent 0%);
+  background-size: 0.3rem 0.3rem;
+  background-position: 0.5rem 1rem;
+  background-clip: content-box;
+  background-repeat: repeat-x;
+}
+
+.inputFieldfileHolder :nth-child(2) {
+ border:none;
+ max-width: 13rem;
+ height:fit-content;
+ font-size: 1rem;
+ overflow-wrap: break-word;
+ text-overflow: ellipsis;
+}
+.inputFieldDiv :nth-child(2)::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+input[type='file'] {
+  color: rgba(0, 0, 0, 0);
+  
+}
+
+.subheading {
+  font-family: "Cormorant Garamond", serif;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.75rem;
+  font-weight: 600;
+}
+h1{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin:0;
+}
+
+h2{
+  color: var(--c1);
+  font-size: 1rem;
+  margin:0;
+  font-weight: 300;
+}
+h3{
+  margin:0;
+  font-weight: 300;
+}
+.privacyToggle {
+  background-color: #c2b9a9;
+  border: 0.15rem solid rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.starBtn{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgb(241, 235, 225);
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.245);
+  background-color: rgb(194, 185, 169);
+  width: fit-content;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 0.15rem solid rgba(0,0,0,0.1);
+}
+.starBtnL{
+  text-shadow: none;
+  text-decoration: none;
+  height: 100%;
+  color: rgb(10, 10, 10);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0rem 0.4rem 0.4rem;
+  margin-right: 1rem;
+  background-color: rgb(219, 209, 192);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.headerDiv{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top:0;
+  gap: 1rem;
+}
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.iconTextButton,
+.primaryAction,
+.tabButton {
+  font-family: "Lexend";
+  color: var(--c1);
+  cursor: pointer;
+}
+.iconTextButton {
+  min-height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0.12rem solid var(--line);
+  border-radius: 0.5rem;
+  background-color: var(--surface);
+  padding: 0 0.7rem;
+  font-size: 0.9rem;
+}
+.homeView {
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.primaryAction {
+  width: min(100%, 19rem);
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--c1);
+  color: rgb(255, 255, 252);
+  padding: 0 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.fillAction {
+  background-color: rgb(8, 203, 0);
+}
+.popupStatus {
+  min-height: 1.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.25rem 0 0;
+  text-align: center;
+}
+.popupShellV2 {
+  width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgb(248, 250, 248);
+  color: rgb(31, 41, 55);
+  font-family: "Poppins", "Lexend", sans-serif;
+  padding: 1rem;
+}
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.popupBrand {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.popupLogo {
+  width: 2.7rem;
+  height: 2.7rem;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+}
+.popupBrand h1 {
+  color: rgb(18, 31, 46);
+  font-family: "Poppins", "Lexend", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.popupBrand p {
+  color: rgb(92, 103, 118);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin: 0.15rem 0 0;
+}
+.tabPreview {
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 0.65rem;
+  background: rgb(255, 255, 255);
+  padding: 0.85rem;
+}
+.tabPreview div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.tabPreview span {
+  color: rgb(100, 116, 139);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.tabPreview strong {
+  min-width: 0;
+  color: rgb(31, 41, 55);
+  font-size: 0.82rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tabPreview p {
+  color: rgb(71, 85, 105);
+  font-size: 0.83rem;
+  line-height: 1.4;
+  margin: 0.45rem 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.popupActions {
+  display: grid;
+  gap: 0.75rem;
+}
+.fillButton,
+.settingsButton {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  font-family: "Poppins", "Lexend", sans-serif;
+}
+.fillButton {
+  min-height: 4.25rem;
+  border: 0;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.9rem 1rem;
+  box-shadow: 0 10px 24px rgba(8, 203, 0, 0.22);
+}
+.fillButton span {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+}
+.fillButton strong {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.fillButton small {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+.settingsButton {
+  min-height: 2.9rem;
+  border: 1px solid rgb(226, 232, 240);
+  background: rgb(255, 255, 255);
+  color: rgb(31, 41, 55);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0 1rem;
+}
+.fillButton:hover,
+.settingsButton:hover {
+  filter: brightness(0.98);
+}
+.popupFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 1.4rem;
+  color: rgb(92, 103, 118);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.statusDot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgb(148, 163, 184);
+}
+.statusDot.working {
+  background: rgb(234, 179, 8);
+}
+.statusDot.success {
+  background: rgb(8, 203, 0);
+}
+.statusDot.error {
+  background: rgb(239, 68, 68);
+}
+.settingsView {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tabBar {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+}
+.tabButton {
+  flex: 0 0 auto;
+  min-height: 2.3rem;
+  border: 0.12rem solid var(--line);
+  border-radius: 0.5rem;
+  background-color: var(--surface);
+  padding: 0 0.8rem;
+  white-space: nowrap;
+}
+.tabButton.active {
+  background-color: var(--c1);
+  border-color: var(--c1);
+  color: rgb(255, 255, 252);
+}
+.settingsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fieldStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.optionsPage {
+  width: min(100%, 1200px);
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: rgb(237, 239, 237);
+  color: rgb(18, 31, 46);
+  font-family: "Poppins", "Lexend", sans-serif;
+}
+.optionsPage * {
+  font-family: inherit;
+}
+.optionsHero {
+  background-color: rgb(0, 205, 0);
+  color: rgb(255, 255, 255);
+}
+.optionsHeroInner {
+  min-height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 2.5rem;
+}
+.optionsBrand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brandMark {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+.optionsBrand h1 {
+  font-family: "Lexend";
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+.optionsBrand p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.optionsActions {
+  display: flex;
+  gap: 0.75rem;
+}
+.heroButton {
+  min-width: 8.4rem;
+  height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 0.45rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: rgb(255, 255, 255);
+  font-family: "Lexend";
+  font-weight: 700;
+  cursor: pointer;
+}
+.optionsTabs {
+  height: 3.5rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0 2.5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px rgba(15, 25, 35, 0.13);
+}
+.optionsTabs button {
+  min-width: 5.7rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  color: rgb(99, 108, 122);
+  font-family: "Lexend";
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.optionsTabs button.active {
+  border-bottom-color: rgb(0, 205, 0);
+  color: rgb(0, 170, 0);
+}
+.saveNotice {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  border-radius: 0.45rem;
+  background-color: rgb(18, 31, 46);
+  color: rgb(255, 255, 255);
+  padding: 0.65rem 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(15, 25, 35, 0.24);
+}
+.optionsCard {
+  margin: 2.5rem;
+  border-radius: 0.6rem;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(15, 25, 35, 0.13);
+}
+.optionsCard h2 {
+  color: rgb(18, 31, 46);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+.cardSubheading {
+  margin-top: 2.2rem;
+}
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem 1.25rem;
+}
+.optionsStack {
+  display: grid;
+  gap: 1.35rem;
+  margin-top: 1.35rem;
+}
+.optionsPage .inputFieldDiv,
+.optionsPage .textAreaDiv,
+.optionsPage .gridFieldDivHolder {
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.55rem;
+  justify-content: flex-start;
+}
+.optionsPage .inputFieldDiv h2,
+.optionsPage .textAreaDiv h2,
+.optionsPage .gridFieldDivHolder h2 {
+  color: rgb(18, 31, 46);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.optionsPage .inputFieldDiv :nth-child(2),
+.optionsPage .textAreaDiv :nth-child(2),
+.optionsPage .gridFieldDiv {
+  width: 100%;
+  max-width: none;
+  min-height: 2.85rem;
+  box-sizing: border-box;
+  border: 1px solid rgb(202, 210, 220);
+  border-radius: 0.45rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(18, 31, 46);
+  font-size: 0.95rem;
+}
+.optionsPage .textAreaDiv :nth-child(2) {
+  min-height: 8rem;
+  resize: vertical;
+}
+.optionsPage .gridFieldDiv {
+  min-height: 4.4rem;
+}
+.optionsPage .inputFieldfileHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.aboutCard p {
+  max-width: 44rem;
+  margin: 0;
+  color: rgb(70, 82, 96);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.mainContent {
+  padding: 2.5rem;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+.formGrid.twoColumn {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgb(55, 65, 81);
+  font-family: "Lexend";
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.formGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  color: rgb(31, 41, 55);
+  font-family: "Lexend";
+  font-size: 0.92rem;
+  padding: 0.8rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formGroup textarea {
+  resize: vertical;
+}
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: rgb(8, 203, 0);
+  box-shadow: 0 0 0 3px rgba(8, 203, 0, 0.1);
+  outline: none;
+}
+.entryCard {
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  background: rgb(248, 250, 252);
+  padding: 1.25rem;
+}
+.entryRemove {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(239, 68, 68);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-weight: 700;
+}
+.secondaryAction {
+  min-height: 2.75rem;
+  border: 1px solid rgba(8, 203, 0, 0.28);
+  border-radius: 0.5rem;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "Lexend";
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+}
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgb(55, 65, 81);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.checkboxLabel input {
+  position: absolute;
+  opacity: 0;
+}
+.checkboxLabel span {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(209, 213, 219);
+  border-radius: 0.25rem;
+  background: rgb(255, 255, 255);
+}
+.checkboxLabel input:checked + span {
+  border-color: rgb(8, 203, 0);
+  background: rgb(8, 203, 0);
+}
+.checkboxLabel input:checked + span::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.6rem;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  padding: 0.7rem 0.85rem;
+}
+.checkboxLabel.compact {
+  margin-top: 0;
+}
+.skillInputRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+}
+.skillInputRow button {
+  min-width: 4.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "Lexend";
+  font-weight: 700;
+  padding: 0 1rem;
+}
+.skillsTags {
+  display: flex;
+  min-height: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "Lexend";
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+}
+.skillTag span {
+  opacity: 0.75;
+}
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(107, 114, 128);
+  font-size: 0.78rem;
+}
+.mutedText,
+.sectionDescription {
+  color: rgb(107, 114, 128);
+  font-size: 0.9rem;
+}
+.mappingList {
+  display: grid;
+  gap: 0.75rem;
+}
+.mappingItem {
+  display: grid;
+  grid-template-columns: 10rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 0.5rem;
+  background: rgb(249, 250, 251);
+  padding: 1rem;
+}
+.mappingItem.editing {
+  align-items: end;
+  grid-template-columns: minmax(10rem, 0.4fr) minmax(18rem, 1fr) auto;
+}
+.mappingTitle {
+  display: grid;
+  gap: 0.35rem;
+}
+.mappingItem span {
+  color: rgb(31, 41, 55);
+  font-weight: 700;
+}
+.mappingItem small {
+  color: rgb(107, 114, 128);
+}
+.mappingKeywords {
+  line-height: 1.5;
+}
+.mappingEditor {
+  display: grid;
+  gap: 0.35rem;
+  color: rgb(31, 41, 55);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.mappingEditor input {
+  min-height: 2.7rem;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.45rem;
+  background: rgb(255, 255, 255);
+  color: rgb(17, 24, 39);
+  font-family: "Lexend";
+  font-size: 0.9rem;
+  padding: 0 0.85rem;
+}
+.mappingEditor input:focus {
+  border-color: rgb(8, 203, 0);
+  box-shadow: 0 0 0 3px rgba(8, 203, 0, 0.12);
+  outline: none;
+}
+.mappingActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.mappingItem button,
+.linkButton {
+  border: 0;
+  background: transparent;
+  color: rgb(8, 203, 0);
+  cursor: pointer;
+  font-family: "Lexend";
+  font-weight: 700;
+}
+.mappingItem .mappingSaveButton {
+  border-radius: 0.45rem;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.65rem 1rem;
+}
+.mappingItem .mappingCancelButton {
+  color: rgb(107, 114, 128);
+}
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgb(229, 231, 235);
+  background: rgb(249, 250, 251);
+  padding: 1rem 2.5rem;
+}
+.statusMessage {
+  color: rgb(107, 114, 128);
+  font-size: 0.9rem;
+}
+.statusMessage.success {
+  color: rgb(8, 150, 0);
+}
+.statusMessage.warning {
+  color: rgb(180, 83, 9);
+}
+.statusMessage.error {
+  color: rgb(220, 38, 38);
+}
+.savePopup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+.savePopupContent {
+  width: min(90vw, 25rem);
+  border-radius: 1rem;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+  padding: 2rem;
+  text-align: center;
+}
+.savePopupIcon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  margin: 0 auto 1.25rem;
+}
+.savePopupContent h3 {
+  color: rgb(31, 41, 55);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.savePopupContent p {
+  color: rgb(107, 114, 128);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.savePopupContent button {
+  border: 0;
+  border-radius: 0.5rem;
+  background: rgb(8, 203, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "Lexend";
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+}
+.aboutContent {
+  display: grid;
+  gap: 2rem;
+}
+.aboutContent h3 {
+  color: rgb(31, 41, 55);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.aboutContent ul {
+  list-style: none;
+  padding: 0;
+}
+.aboutContent li {
+  position: relative;
+  color: rgb(70, 82, 96);
+  padding: 0.35rem 0 0.35rem 1.5rem;
+}
+.aboutContent li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgb(8, 203, 0);
+}
+
+@media (max-width: 820px) {
+  .optionsHeroInner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .optionsTabs {
+    overflow-x: auto;
+    padding: 0 1.5rem;
+  }
+
+  .optionsCard {
+    margin: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .optionsGrid,
+  .formGrid,
+  .formGrid.twoColumn,
+  .mappingItem {
+    grid-template-columns: 1fr;
+  }
+
+  .mainContent {
+    padding: 1.5rem;
+  }
+
+  .statusBar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
